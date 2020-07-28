@@ -1,0 +1,2 @@
+rootProject.name='UptuneAndroid'
+include ':app'
