@@ -1,4 +1,4 @@
-package kr.kro.jhseo1107.uptuneandroid;
+package kr.kro.uptune.uptuneandroid;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "kr.kro.jhseo1107.uptuneandroid"
+        applicationId "kr.kro.uptune.uptuneandroid"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1

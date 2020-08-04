@@ -1,4 +1,4 @@
-package kr.kro.jhseo1107.uptuneandroid;
+package kr.kro.uptune.uptuneandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
