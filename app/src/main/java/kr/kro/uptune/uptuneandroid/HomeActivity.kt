@@ -17,4 +17,6 @@ class HomeActivity : AppCompatActivity() {
         finishAndRemoveTask()
         Process.killProcess(Process.myPid())
     }
+    
+
 }

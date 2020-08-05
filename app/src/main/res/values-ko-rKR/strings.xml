@@ -11,4 +11,6 @@
     <string name="AuthCode">보안 코드</string>
     <string name="SendAuth">인증</string>
     <string name="LegalInform">해당 버튼을 클릭하면 업튠 사용자 약관에 동의한것으로 간주합니다. https://jhseo1107.kro.kr/uptune/legal.jsp</string>
+    <string name="Classes">강좌 -></string>
+    <string name="Trends">트렌드 -></string>
 </resources>

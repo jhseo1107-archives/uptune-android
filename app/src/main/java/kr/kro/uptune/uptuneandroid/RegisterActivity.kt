@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import kotlinx.coroutines.*
 import org.json.simple.JSONObject
 import org.json.simple.parser.JSONParser
@@ -54,6 +51,12 @@ class RegisterActivity : AppCompatActivity() , CoroutineScope{
         var bwwrite = "mail=" + givenid + "&pw=" + givenpw + "&usrname=" + givenname
 
         launch {
+            var registerButton : Button = findViewById(R.id.registerButton)
+            var registerProgressBar : ProgressBar = findViewById(R.id.registerProgressBar)
+
+            registerButton.visibility = View.GONE
+            registerProgressBar.visibility = View.VISIBLE
+
             var conn = url.openConnection() as HttpsURLConnection
 
             jsonObject = withContext(Dispatchers.IO) {
@@ -79,6 +82,8 @@ class RegisterActivity : AppCompatActivity() , CoroutineScope{
             if(jsonObject.get("status").toString() == "409")
             {
                 makeToast("이미 회원가입된 이메일입니다. 다른 이메일을 이용해 주세요.", Toast.LENGTH_LONG)
+                registerButton.visibility = View.VISIBLE
+                registerProgressBar.visibility = View.GONE
             }
             else if(jsonObject.get("status").toString() == "200")
             {
@@ -91,10 +96,13 @@ class RegisterActivity : AppCompatActivity() , CoroutineScope{
                 authEditText.visibility = View.VISIBLE
                 authButton.visibility = View.VISIBLE
                 legalInformTextView.visibility = View.VISIBLE
+                registerProgressBar.visibility = View.GONE
             }
             else
             {
                 makeToast("알 수 없는 오류가 발생했습니다.", Toast.LENGTH_LONG)
+                registerButton.visibility = View.VISIBLE
+                registerProgressBar.visibility = View.GONE
             }
 
         }
@@ -113,6 +121,12 @@ class RegisterActivity : AppCompatActivity() , CoroutineScope{
         var jsonObject = JSONObject()
 
         launch {
+            var authButton : Button = findViewById(R.id.authButton)
+            var authProgressBar : ProgressBar = findViewById(R.id.authProgressBar)
+
+            authButton.visibility = View.GONE
+            authProgressBar.visibility = View.VISIBLE
+
             var conn = url.openConnection() as HttpsURLConnection
 
             jsonObject = withContext(Dispatchers.IO) {
@@ -139,16 +153,21 @@ class RegisterActivity : AppCompatActivity() , CoroutineScope{
             if(jsonObject.get("status").toString() == "403")
             {
                 makeToast("보안코드가 잘못되었습니다.", Toast.LENGTH_LONG)
+                authButton.visibility = View.VISIBLE
+                authProgressBar.visibility = View.GONE
             }
             else if (jsonObject.get("status").toString() == "200")
             {
                 makeToast("회원가입이 완료되었습니다, 로그인을 해주세요.", Toast.LENGTH_LONG)
+                authProgressBar.visibility = View.GONE
                 changeScreen(LoginActivity::class.java)
                 finish()
             }
             else
             {
                 makeToast("알 수 없는 오류가 발생했습니다.", Toast.LENGTH_LONG)
+                authButton.visibility = View.VISIBLE
+                authProgressBar.visibility = View.GONE
             }
         }
     }

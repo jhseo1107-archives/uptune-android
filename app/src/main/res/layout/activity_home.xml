@@ -5,4 +5,244 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeActivity"/>
+        tools:context=".HomeActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/topBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+    >
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" app:srcCompat="@drawable/logolong"
+                android:id="@+id/topLongLogo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+        />
+        <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp" app:srcCompat="@drawable/menubar" android:id="@+id/menuImage"
+                tools:layout_editor_absoluteY="0dp" tools:layout_editor_absoluteX="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp" app:srcCompat="@drawable/logo" android:id="@+id/logoMainPage"
+            />
+            <TextView
+                    android:text="@string/Classes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/classTextView"
+                    android:textColor="@color/uptuneDarkBlue"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:paddingStart="10sp"
+                    android:paddingLeft="10sp"
+                    android:paddingTop="5sp"
+            />
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/classScrollView"
+            >
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200sp">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="150sp"
+                            android:layout_height="match_parent" android:layout_weight="1"
+                            android:layout_marginStart="10sp"
+                            android:layout_marginLeft="10sp"
+                            android:id="@+id/class1"
+                    >
+                        <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="0dp" app:srcCompat="@drawable/rectangle1"
+                                android:id="@+id/classImage1" android:layout_weight="1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="150sp"
+                            android:layout_height="match_parent" android:layout_weight="1"
+                            android:layout_marginStart="10sp"
+                            android:layout_marginLeft="10sp"
+                            android:id="@+id/class2"
+                    >
+                        <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" app:srcCompat="@drawable/rectangle2"
+                                android:id="@+id/classImage2" android:layout_weight="1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="150sp"
+                            android:layout_height="match_parent" android:layout_weight="1"
+                            android:layout_marginStart="10sp"
+                            android:layout_marginLeft="10sp"
+                            android:id="@+id/class3"
+                    >
+                        <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" app:srcCompat="@drawable/rectangle3"
+                                android:id="@+id/classImage3" android:layout_weight="1"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+            <TextView
+                    android:text="@string/Trends"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/trendTextView"
+                    android:textColor="@color/uptuneDarkBlue"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:paddingStart="10sp"
+                    android:paddingLeft="10sp"
+                    android:paddingTop="5sp"
+            />
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/trendLinearLayout"
+                    android:paddingStart="10sp"
+                    android:paddingLeft="10sp"
+            >
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5sp"
+                        android:id="@+id/trend1Layout"
+                >
+                    <TextView
+                            android:text="대충 제목"
+                            android:singleLine="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/trend1Title"
+                            android:textColor="@color/black"
+                            android:textSize="25sp"
+                    />
+                    <TextView
+                            android:text="글쓴이: ㅇㅇ 작성일: 2020. 08.05 좋아요 : 300"
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_height="wrap_content" android:id="@+id/trend1Info"
+                            android:layout_weight="1"
+                    />
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5sp"
+                        android:id="@+id/trend2Layout"
+                >
+                    <TextView
+                            android:text="대충 제목"
+                            android:singleLine="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/trend2Title"
+                            android:textColor="@color/black"
+                            android:textSize="25sp"
+                    />
+                    <TextView
+                            android:text="글쓴이: ㅇㅇ 작성일: 2020. 08.05 좋아요 : 300"
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_height="wrap_content" android:id="@+id/trend2Info"
+                            android:layout_weight="1"
+                    />
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5sp"
+                        android:id="@+id/trend3Layout"
+                >
+                    <TextView
+                            android:text="대충 제목"
+                            android:singleLine="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/trend3Title"
+                            android:textColor="@color/black"
+                            android:textSize="25sp"
+                    />
+                    <TextView
+                            android:text="글쓴이: ㅇㅇ 작성일: 2020. 08.05 좋아요 : 300"
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_height="wrap_content" android:id="@+id/trend3Info"
+                            android:layout_weight="1"
+                    />
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5sp"
+                        android:id="@+id/trend4Layout"
+                >
+                    <TextView
+                            android:text="대충 제목"
+                            android:singleLine="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:id="@+id/trend4Title"
+                            android:textColor="@color/black"
+                            android:textSize="25sp"
+                    />
+                    <TextView
+                            android:text="글쓴이: ㅇㅇ 작성일: 2020. 08.05 좋아요 : 300"
+                            android:singleLine="true"
+                            android:layout_width="wrap_content"
+                            android:textSize="15sp"
+                            android:layout_height="wrap_content" android:id="@+id/trend4Info"
+                            android:layout_weight="1"
+                    />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

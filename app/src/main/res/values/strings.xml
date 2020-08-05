@@ -12,4 +12,6 @@
     <string name="LegalInform">"If you click this button, we will accept that you agreed to our terms and conditions.
         https://jhseo1107.kro.kr/uptune/legal.jsp "
     </string>
+    <string name="Classes">Classes -></string>
+    <string name="Trends">Trend -></string>
 </resources>
