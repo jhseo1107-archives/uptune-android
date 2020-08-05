@@ -8,6 +8,6 @@
     <color name="black">#000000</color>
     <color name="alertRed">#F44336</color>
     <color name="uptuneDarkBlue">#2F5597</color>
-    <color name="transparent">#rrggbb</color>
+    <color name="transparent">#00000000</color>
     <color name="yellow">#ffff00</color>
 </resources>

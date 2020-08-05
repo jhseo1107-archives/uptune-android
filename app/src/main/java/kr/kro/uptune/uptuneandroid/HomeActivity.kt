@@ -5,13 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Process
 import android.view.View
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.coroutines.*
-import org.json.JSONObject
+import org.json.simple.JSONObject
 import org.json.simple.JSONArray
 import org.json.simple.parser.JSONParser
 import java.io.BufferedReader
@@ -67,6 +64,8 @@ class HomeActivity : AppCompatActivity() , CoroutineScope{
                 var classProgressBar = findViewById(R.id.classProgressBar) as ProgressBar
                 var classNothing = findViewById(R.id.classNothing) as TextView
 
+                classProgressBar.visibility = View.GONE
+
                 var classObjectList : ArrayList<ConstraintLayout> = ArrayList<ConstraintLayout>()
 
                 classObjectList.add(findViewById(R.id.class1) as ConstraintLayout)
@@ -75,12 +74,11 @@ class HomeActivity : AppCompatActivity() , CoroutineScope{
 
                 if(classnum == 0)
                 {
-                    classProgressBar.visibility = View.GONE
                     classNothing.visibility = View.VISIBLE
                     return@launch
                 }
 
-                for(i in 0 until classarray.size)
+                for(i in 0 until classnum)
                 {
                     var tempConLay = classObjectList.get(i)
 
@@ -90,14 +88,50 @@ class HomeActivity : AppCompatActivity() , CoroutineScope{
                     var objectTitle = tempConLay.getChildAt(3) as TextView
                     var objectPercentage = tempConLay.getChildAt(4) as TextView
 
-                    objectId.text = (classarray.get(i) as JSONObject).getInt("id").toString()
-                    objectTitle.text = (classarray.get(i) as JSONObject).getString("name")
-                    objectPercentage.text = (classarray.get(i) as JSONObject).getInt("precentage").toString()
+                    var jsonObject = classarray.get(i) as JSONObject
+
+                    objectId.text = jsonObject.get("id").toString()
+                    objectTitle.text = jsonObject.get("name").toString()
+                    objectPercentage.text = jsonObject.get("percentage").toString() + "%"
                 }
             }
 
             launch { //Trend
+                var trendnum = trendarray.size
 
+                var trendProgressBar = findViewById(R.id.trendProgressBar) as ProgressBar
+                var trendNothing = findViewById(R.id.trendNothing) as TextView
+
+                trendProgressBar.visibility = View.GONE
+
+                var trendObjectList : ArrayList<LinearLayout> = ArrayList<LinearLayout>()
+
+                trendObjectList.add(findViewById(R.id.trend1Layout))
+                trendObjectList.add(findViewById(R.id.trend2Layout))
+                trendObjectList.add(findViewById(R.id.trend3Layout))
+
+                if(trendnum == 0)
+                {
+                    trendNothing.visibility = View.VISIBLE
+                    return@launch
+                }
+
+                for(i in 0 until trendnum)
+                {
+                    var tempLinLay = trendObjectList.get(i)
+
+                    tempLinLay.visibility = View.VISIBLE
+
+                    var objectId = tempLinLay.getChildAt(0) as TextView
+                    var objectTitle = tempLinLay.getChildAt(1) as TextView
+                    var objectInfo = tempLinLay.getChildAt(2) as TextView
+
+                    var jsonObject = trendarray.get(i) as JSONObject
+
+                    objectId.text = jsonObject.get("id").toString()
+                    objectTitle.text = jsonObject.get("name").toString()
+                    objectInfo.text = String.format("작성일: %s 좋아요: %s",jsonObject.get("timestamp").toString(), jsonObject.get("likes").toString())
+                }
             }
         }
     }
