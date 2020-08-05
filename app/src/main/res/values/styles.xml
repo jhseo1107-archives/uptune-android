@@ -9,6 +9,8 @@
     </style>
     <style name="UptuneTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/uptuneBlue</item>  // statusbar color 적용
+        <item name="android:background">@color/white</item>
+        <item name="colorAccent">@color/uptuneBlue</item>
     </style>
 
 </resources>

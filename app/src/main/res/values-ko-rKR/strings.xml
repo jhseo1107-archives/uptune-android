@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Uptune</string>
+    <string name="Email">이메일</string>
+    <string name="Password">비밀번호</string>
+    <string name="Login">로그인</string>
+    <string name="Register">회원가입</string>
+    <string name="StartRegister">회원가입 시작</string>
+    <string name="Nickname">별명</string>
+    <string name="SentAuth">보안 코드가 메일로 전송되었습니다.</string>
+    <string name="AuthCode">보안 코드</string>
+    <string name="SendAuth">인증</string>
+    <string name="LegalInform">해당 버튼을 클릭하면 업튠 사용자 약관에 동의한것으로 간주합니다. https://jhseo1107.kro.kr/uptune/legal.jsp</string>
+</resources>
