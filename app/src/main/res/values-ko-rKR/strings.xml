@@ -13,4 +13,19 @@
     <string name="LegalInform">해당 버튼을 클릭하면 업튠 사용자 약관에 동의한것으로 간주합니다. https://jhseo1107.kro.kr/uptune/legal.jsp</string>
     <string name="Classes">강좌 -></string>
     <string name="Trends">트렌드 -></string>
+    <string name="KitPurchases">키트 구매 -></string>
+    <string name="Level1">Lv. 1</string>
+    <string name="Level2">Lv. 2</string>
+    <string name="Level3">Lv. 3</string>
+    <string name="KitLevel">키트 레벨</string>
+    <string name="Kit1Info1">∙ 미취학아동 및 초등 저학년 대상</string>
+    <string name="Kit1Info2">∙ 쉬운 제작 난이도</string>
+    <string name="Kit1Info3">∙ 음악과 공작활동의 융합</string>
+    <string name="Kit2Info1">∙ 초등 고학년 및 중학생 대상</string>
+    <string name="Kit2Info2">∙ 나만의 악기 만들기</string>
+    <string name="Kit2Info3">∙ 까다롭지만 높은 완성도</string>
+    <string name="Kit3Info1">∙ 고등학생 및 성인 대상</string>
+    <string name="Kit3Info2">∙ 시제품과 가장 비슷한 완성도</string>
+    <string name="Kit3Info3">∙ 여가활동으로 활용할 수 있는 수준</string>
+    <string name="Nothing">아무것도 없어요...</string>
 </resources>

@@ -14,4 +14,19 @@
     </string>
     <string name="Classes">Classes -></string>
     <string name="Trends">Trend -></string>
+    <string name="KitPurchases">Purchase Kits -></string>
+    <string name="Level1">Lv. 1</string>
+    <string name="Level2">Lv. 2</string>
+    <string name="Level3">Lv. 3</string>
+    <string name="KitLevel">Kit Level</string>
+    <string name="Kit1Info1">∙ For kids</string>
+    <string name="Kit1Info2">∙ Easy to make</string>
+    <string name="Kit1Info3">∙ Fusion of music and crafting</string>
+    <string name="Kit2Info1">∙ For teens</string>
+    <string name="Kit2Info2">∙ Make my own instrument</string>
+    <string name="Kit2Info3">∙ Hard but high quality</string>
+    <string name="Kit3Info1">∙ For adults</string>
+    <string name="Kit3Info2">∙ Highest quality</string>
+    <string name="Kit3Info3">∙ Available for leisure</string>
+    <string name="Nothing">There is nothing here.</string>
 </resources>
