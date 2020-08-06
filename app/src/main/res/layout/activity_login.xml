@@ -27,7 +27,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintVertical_bias="0.45"
             app:layout_constraintWidth_percent="0.6"
             android:hint="@string/Email"
     />
@@ -41,7 +41,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.6"
+            app:layout_constraintVertical_bias="0.55"
             app:layout_constraintWidth_percent="0.6"
             android:hint="@string/Password"
     />
@@ -56,8 +56,20 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintWidth_percent="0.6"
             app:layout_constraintHeight_percent="0.2"
-            app:layout_constraintVertical_bias="0.7"
+            app:layout_constraintVertical_bias="0.65"
     />
+    <CheckBox
+            android:text="@string/AutoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/autoLoginCheck"
+            android:checked="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintVertical_bias="0.7"/>
     <Button
             android:text="@string/Register"
             android:layout_width="0dp"

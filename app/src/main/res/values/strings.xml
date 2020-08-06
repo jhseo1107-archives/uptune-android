@@ -29,4 +29,7 @@
     <string name="Kit3Info2">∙ Highest quality</string>
     <string name="Kit3Info3">∙ Available for leisure</string>
     <string name="Nothing">There is nothing here.</string>
+    <string name="AutoLogin">Auto Login</string>
+    <string name="Logout">Logout</string>
+    <string name="Close">Close</string>
 </resources>

@@ -10,10 +10,11 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:id="@+id/topBar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintVertical_bias="0"
     >
         <ImageView
@@ -33,13 +34,47 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.05"
+                android:onClick="onMenuBarClick"
         />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/settingsBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            android:background="@color/gray"
+            android:visibility="gone">
+        <TextView
+                android:text="@string/Logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/logoutText"
+                android:textSize="27.5sp"
+                android:textColor="@color/alertRed"
+                android:paddingStart="10sp"
+                android:paddingLeft="10sp"
+                android:background="@color/transparent"
+                android:onClick="onLogoutClick"
+        />
+        <TextView
+                android:text="@string/Close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/closeMenuText"
+                android:textSize="27.5sp"
+                android:textColor="@color/black"
+                android:paddingStart="10sp"
+                android:paddingLeft="10sp"
+                android:background="@color/transparent"
+                android:onClick="onCloseClick"
+        />
+    </LinearLayout>
     <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintTop_toBottomOf="@id/settingsBar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +97,7 @@
                     android:paddingStart="10sp"
                     android:paddingLeft="10sp"
                     android:paddingTop="5sp"
+                    android:onClick="onClassTitleClick"
             />
             <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -95,7 +131,9 @@
                             android:layout_marginStart="10sp"
                             android:layout_marginLeft="10sp"
                             android:id="@+id/class1"
-                            android:visibility="gone">
+                            android:visibility="gone"
+                            android:onClick="onClassClick"
+                    >
                         <ImageView
                                 android:layout_width="0dp"
                                 android:layout_height="0dp" app:srcCompat="@drawable/rectangle1"
@@ -175,7 +213,8 @@
                             android:layout_marginStart="10sp"
                             android:layout_marginLeft="10sp"
                             android:id="@+id/class2"
-                            android:visibility="gone">
+                            android:visibility="gone"
+                            android:onClick="onClassClick">
                         <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" app:srcCompat="@drawable/rectangle2"
@@ -255,7 +294,8 @@
                             android:layout_marginStart="10sp"
                             android:layout_marginLeft="10sp"
                             android:id="@+id/class3"
-                            android:visibility="gone">
+                            android:visibility="gone"
+                            android:onClick="onClassClick">
                         <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" app:srcCompat="@drawable/rectangle3"
@@ -341,6 +381,7 @@
                     android:paddingStart="10sp"
                     android:paddingLeft="10sp"
                     android:paddingTop="5sp"
+                    android:onClick="onTrendTitleClick"
             />
             <LinearLayout
                     android:orientation="vertical"
@@ -370,7 +411,9 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="5sp"
                         android:id="@+id/trend1Layout"
-                        android:visibility="gone">
+                        android:visibility="gone"
+                        android:onClick="onTrendClick"
+                >
                     <TextView
                             android:layout_width="0dp"
                             android:layout_height="0dp"
@@ -405,7 +448,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="5sp"
                         android:id="@+id/trend2Layout"
-                        android:visibility="gone">
+                        android:visibility="gone"
+                        android:onClick="onTrendClick">
                     <TextView
                             android:layout_width="0dp"
                             android:layout_height="0dp"
@@ -440,7 +484,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="5sp"
                         android:id="@+id/trend3Layout"
-                        android:visibility="gone">
+                        android:visibility="gone"
+                        android:onClick="onTrendClick">
                     <TextView
                             android:layout_width="0dp"
                             android:layout_height="0dp"

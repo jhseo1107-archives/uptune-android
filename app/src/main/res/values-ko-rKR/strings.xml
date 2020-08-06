@@ -28,4 +28,7 @@
     <string name="Kit3Info2">∙ 시제품과 가장 비슷한 완성도</string>
     <string name="Kit3Info3">∙ 여가활동으로 활용할 수 있는 수준</string>
     <string name="Nothing">아무것도 없어요...</string>
+    <string name="AutoLogin">자동 로그인</string>
+    <string name="Logout">로그아웃</string>
+    <string name="Close">닫기</string>
 </resources>

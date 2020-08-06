@@ -1,25 +1,18 @@
 package kr.kro.uptune.uptuneandroid
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.HandlerThread
 import android.os.Process
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.*
 import org.json.simple.JSONObject
 import org.json.simple.parser.JSONParser
-import java.io.BufferedReader
-import java.io.BufferedWriter
-import java.io.InputStreamReader
-import java.io.OutputStreamWriter
+import java.io.*
 import java.net.URL
-import java.util.concurrent.CountDownLatch
 import javax.net.ssl.HttpsURLConnection
 import kotlin.coroutines.CoroutineContext
 
@@ -52,8 +45,8 @@ class LoginActivity : AppCompatActivity(), CoroutineScope {
         var idEditText : EditText = findViewById(R.id.idText)
         var pwEditText : EditText = findViewById(R.id.passwordText)
 
-        var givenid = idEditText.text
-        var givenpw = pwEditText.text
+        var givenid = idEditText.text.toString()
+        var givenpw = pwEditText.text.toString()
 
         var jsonObject = JSONObject()
 
@@ -65,6 +58,7 @@ class LoginActivity : AppCompatActivity(), CoroutineScope {
         launch {
             var loginButton : Button = findViewById(R.id.loginButton)
             var loginProgressBar : ProgressBar = findViewById(R.id.loginProgressBar)
+            var autoLoginCheck = findViewById(R.id.autoLoginCheck) as CheckBox
 
             loginButton.visibility = View.GONE
             loginProgressBar.visibility = View.VISIBLE
@@ -103,6 +97,21 @@ class LoginActivity : AppCompatActivity(), CoroutineScope {
                 loginButton.visibility = View.VISIBLE
                 loginProgressBar.visibility = View.GONE
             } else if (jsonObject.get("status").toString() == "200") {
+                GlobalScope.launch {
+                    if (autoLoginCheck.isChecked) {
+                        var jsonObject = JSONObject()
+
+                        jsonObject.put("mail", givenid)
+                        jsonObject.put("pw", givenpw)
+
+                        try {
+                            writeInternal("autologin.txt", jsonObject.toJSONString())
+                        } catch (e: IOException) {
+                            makeToast("자동로그인 정보 저장에 실패했습니다.", Toast.LENGTH_LONG)
+                        }
+
+                    }
+                }
                 changeScreen(HomeActivity::class.java)
             } else {
                 makeToast("알 수 없는 오류가 발생했습니다.", Toast.LENGTH_LONG)
@@ -122,6 +131,20 @@ class LoginActivity : AppCompatActivity(), CoroutineScope {
         var intent = Intent(this, activity)
         startActivity(intent)
         finish()
+    }
+
+    fun writeInternal(filename : String, content : String)
+    {
+        try{
+            var fos : FileOutputStream = this.applicationContext.openFileOutput(filename, Context.MODE_PRIVATE)
+            fos.write(content.toByteArray())
+            fos.close()
+        }
+        catch (e : IOException)
+        {
+            throw e
+        }
+
     }
 
     fun onRegister(view : View)
