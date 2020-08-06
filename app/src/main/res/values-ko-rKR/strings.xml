@@ -31,4 +31,7 @@
     <string name="AutoLogin">자동 로그인</string>
     <string name="Logout">로그아웃</string>
     <string name="Close">닫기</string>
+    <string name="PopTrends">인기 트렌드 -></string>
+    <string name="RecTrends">최근 트렌드 -></string>
+    <string name="UploadVid">영상 업로드</string>
 </resources>

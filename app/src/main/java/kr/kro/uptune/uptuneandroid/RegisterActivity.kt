@@ -181,6 +181,5 @@ class RegisterActivity : AppCompatActivity() , CoroutineScope{
     {
         var intent = Intent(this, activity)
         startActivity(intent)
-        finish()
     }
 }

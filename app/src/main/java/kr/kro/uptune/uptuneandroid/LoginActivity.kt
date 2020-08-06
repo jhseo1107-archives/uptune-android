@@ -130,7 +130,6 @@ class LoginActivity : AppCompatActivity(), CoroutineScope {
     {
         var intent = Intent(this, activity)
         startActivity(intent)
-        finish()
     }
 
     fun writeInternal(filename : String, content : String)

@@ -140,9 +140,22 @@ class HomeActivity : AppCompatActivity() , CoroutineScope {
     }
 
     override fun onBackPressed() {
-        moveTaskToBack(true)
-        finishAndRemoveTask()
-        Process.killProcess(Process.myPid())
+        var settingsBar = findViewById(R.id.settingsBar) as LinearLayout
+        var menuBar = findViewById(R.id.menuImage) as ImageView
+
+        if(settingsBar.visibility == View.VISIBLE)
+        {
+            settingsBar.visibility = View.GONE
+            menuBar.visibility = View.VISIBLE
+            Log.v("onBackPressed", "settingsBarGone")
+        }
+        else
+        {
+            Log.v("onBackPressed", "processKill")
+            moveTaskToBack(true)
+            finishAndRemoveTask()
+            Process.killProcess(Process.myPid())
+        }
     }
 
     fun onClassTitleClick(view: View) {
@@ -154,7 +167,7 @@ class HomeActivity : AppCompatActivity() , CoroutineScope {
     }
 
     fun onTrendTitleClick(view: View) {
-
+        changeScreen(TrendListActivity::class.java)
     }
 
     fun onTrendClick(view: View) {
@@ -224,7 +237,6 @@ class HomeActivity : AppCompatActivity() , CoroutineScope {
     fun changeScreen(activity: Class<*>) {
         var intent = Intent(this, activity)
         startActivity(intent)
-        finish()
     }
 
     fun writeInternal(filename: String, content: String) {

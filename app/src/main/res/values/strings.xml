@@ -32,4 +32,7 @@
     <string name="AutoLogin">Auto Login</string>
     <string name="Logout">Logout</string>
     <string name="Close">Close</string>
+    <string name="PopTrends">Popular Videos -></string>
+    <string name="RecTrends">Recent Videos -></string>
+    <string name="UploadVid">Upload Video</string>
 </resources>
