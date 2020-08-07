@@ -5,10 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import kotlinx.coroutines.*
 import org.json.simple.JSONArray
 import org.json.simple.JSONObject
@@ -143,7 +140,20 @@ class TrendListActivity : AppCompatActivity(), CoroutineScope {
 
     fun onTrendClick(view : View)
     {
+        var linLay = view as LinearLayout
 
+        var trendid = (linLay.getChildAt(0) as EditText).text.toString()
+
+
+        var intent = Intent(this, TrendViewActivity::class.java)
+
+        var bndl = Bundle()
+
+        bndl.putString("trendid", trendid)
+
+        intent.putExtras(bndl)
+
+        startActivity(intent)
     }
 
     fun onRecTrendClick(view : View)
