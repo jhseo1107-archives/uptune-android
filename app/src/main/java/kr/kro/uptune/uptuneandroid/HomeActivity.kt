@@ -173,7 +173,7 @@ class HomeActivity : AppCompatActivity() , CoroutineScope {
     fun onTrendClick(view: View) {
         var linLay = view as LinearLayout
 
-        var trendid = (linLay.getChildAt(0) as EditText).text.toString()
+        var trendid = (linLay.getChildAt(0) as TextView).text.toString()
 
 
         var intent = Intent(this, TrendViewActivity::class.java)

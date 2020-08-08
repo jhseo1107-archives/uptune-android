@@ -39,6 +39,10 @@ class MainActivity : AppCompatActivity() , CoroutineScope {
         val handler = Handler()
         handler.postDelayed({
 
+            if(!("autologin.txt" in fileList()))
+            {
+                changeScreen(LoginActivity::class.java)
+            }
             for (x in fileList()) {
                 if (x == "autologin.txt") {
                     try {
