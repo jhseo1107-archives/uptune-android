@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.util.Log
 import android.view.View
+import android.webkit.WebView
 import android.widget.*
 import kotlinx.android.synthetic.main.activity_trend_view.*
 import kotlinx.coroutines.*
@@ -32,7 +33,13 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
         job = Job()
         setContentView(R.layout.activity_trend_view)
 
-        var bndl = intent.extras
+        var html = "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hMG1cg8wBmM\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+        var videoWebView = findViewById(R.id.videoWebView) as WebView
+
+        videoWebView.settings.javaScriptEnabled = true
+        videoWebView.loadData(html, "text/html", null)
+
+        /*var bndl = intent.extras
 
         var trendid = bndl?.getString("trendid")
 
@@ -73,7 +80,8 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
 
             var commentArray = jsonObject.get("comment") as JSONArray
 
-            launch { // Video Processing
+
+            /*launch { // Video Processing
                 var trendProgressBar = findViewById(R.id.trendProgressBar) as ProgressBar
                 var infoLinLay = findViewById(R.id.trendInfoLayout) as LinearLayout
                 var trendVideoView = findViewById(R.id.trendVideoView) as VideoView
@@ -112,20 +120,26 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
 
             launch { //댓글 처리
 
-            }
-        }
+            }*/
+        }*/
 
     }
 
     override fun onDestroy() {
         super.onDestroy()
         job.cancel()
-        if(trendVideoView != null) trendVideoView.stopPlayback()
+        //if(trendVideoView != null) trendVideoView.stopPlayback()
     }
 
     override fun onPause() {
         super.onPause()
-        if(trendVideoView != null && trendVideoView.isPlaying) trendVideoView.pause()
+        //if(trendVideoView != null && trendVideoView.isPlaying) trendVideoView.pause()
+    }
+
+    fun onLikeClick(view : View)
+    {
+        var btn = view as Button
+        btn.text = "좋아요 : 1"
     }
 
     fun makeToast(content: String, type: Int) {

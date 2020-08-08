@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/trendProgressBar"
-            />
+                    android:visibility="gone"/>
             <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -54,11 +54,10 @@
                     android:paddingStart="15sp"
                     android:paddingLeft="15sp"
                     android:id="@+id/trendInfoLayout"
-                    android:visibility="gone"
                     tools:visibility="visible"
             >
                 <TextView
-                        android:text=""
+                        android:text="20200702 기록"
                         android:singleLine="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/trendTitle"
@@ -66,7 +65,7 @@
                         android:textSize="25sp"
                 />
                 <TextView
-                        android:text="글쓴이:  작성일:  좋아요 : "
+                        android:text="글쓴이: 서장협 작성일: 2020.08.08 23:06:17  좋아요 : 0"
                         android:singleLine="true"
                         android:layout_width="wrap_content"
                         android:textSize="15sp"
@@ -74,12 +73,32 @@
                         android:layout_weight="1"
                 />
             </LinearLayout>
-            <VideoView
+            <WebView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/videoWebView"
+            />
+            <Button android:text="좋아요 : 0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/trendVideoView"
-                    android:visibility="visible"
-            />
+                    android:onClick="onLikeClick"
+                    />
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <EditText
+                        android:layout_width="300sp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:hint="댓글 작성..."
+                        android:ems="10"
+                        android:id="@+id/editText"/>
+                <Button
+                        android:text="올리기"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/button" android:layout_weight="1"/>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
