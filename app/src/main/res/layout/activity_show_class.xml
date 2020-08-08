@@ -50,8 +50,6 @@
                                                                xmlns:app="http://schemas.android.com/apk/res-auto"
                                                                android:layout_width="match_parent"
                                                                android:layout_height="match_parent"
-                                                               android:visibility="gone"
-                                                               android:layout_marginBottom="50sp"
                                                                android:layout_marginRight="10sp"
                                                                android:layout_marginLeft="10sp"
             >
@@ -83,7 +81,7 @@
                         app:layout_constraintVertical_bias="0.2"
                 />
                 <TextView
-                        android:text="강좌제목길이초과asdfasdfasdf"
+                        android:text="초급"
                         android:singleLine="true"
                         android:textSize="30sp"
                         android:layout_width="0dp"
@@ -102,7 +100,7 @@
                 />
 
                 <TextView
-                        android:text="진행률 30%"
+                        android:text="진행률 75%"
                         android:singleLine="true"
                         android:textSize="20sp"
                         android:layout_width="0dp"
@@ -137,7 +135,137 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <include layout="@layout/layout_show_class_video"></include>
+            <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                               android:layout_width="match_parent"
+                                                               android:layout_height="match_parent"
+                                                               xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                               android:layout_marginTop="10sp"
+                                                               android:onClick="onClassVideoClick"
+            >
+
+                <TextView
+                        android:text="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/classVideo1Id"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                />
+                <TextView
+                        android:text="[감상] 에델바이스"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:id="@+id/classVideo1Title"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:singleLine="true"
+                        android:paddingLeft="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintWidth_percent="0.8"
+                        app:layout_constraintHorizontal_bias="0"
+                />
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp" app:srcCompat="@drawable/okay"
+                        android:id="@+id/okSign1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/classVideo1Title"
+                        app:layout_constraintBottom_toBottomOf="@id/classVideo1Title"
+                        app:layout_constraintHorizontal_bias="1"
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                               android:layout_width="match_parent"
+                                                               android:layout_height="match_parent"
+                                                               xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                               android:layout_marginTop="10sp"
+            >
+
+                <TextView
+                        android:text="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/classVideo2Id"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                />
+                <TextView
+                        android:text="[감상] 고향의 봄"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:id="@+id/classVideo2Title"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:singleLine="true"
+                        android:paddingLeft="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintWidth_percent="0.8"
+                        app:layout_constraintHorizontal_bias="0"
+                />
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp" app:srcCompat="@drawable/okay"
+                        android:id="@+id/okSign2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/classVideo2Title"
+                        app:layout_constraintBottom_toBottomOf="@id/classVideo2Title"
+                        app:layout_constraintHorizontal_bias="1"
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                               android:layout_width="match_parent"
+                                                               android:layout_height="match_parent"
+                                                               xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                               android:layout_marginTop="10sp"
+            >
+
+                <TextView
+                        android:text="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/classVideo3Id"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                />
+                <TextView
+                        android:text="[감상] G선상의 아리아"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:id="@+id/classVideo3Title"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:singleLine="true"
+                        android:paddingLeft="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintWidth_percent="0.8"
+                        app:layout_constraintHorizontal_bias="0"
+                />
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp" app:srcCompat="@drawable/okay"
+                        android:id="@+id/okSign3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/classVideo3Title"
+                        app:layout_constraintBottom_toBottomOf="@id/classVideo3Title"
+                        app:layout_constraintHorizontal_bias="1"
+                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>
