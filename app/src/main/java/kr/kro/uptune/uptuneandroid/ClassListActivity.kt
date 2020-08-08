@@ -81,7 +81,7 @@ class ClassListActivity : AppCompatActivity(), CoroutineScope {
 
             var inflater = baseContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-            Log.v("Uptune", classNum.toString())
+            /*Log.v("Uptune", classNum.toString())
 
             for(i in 0 until classNum)
             {
@@ -91,19 +91,24 @@ class ClassListActivity : AppCompatActivity(), CoroutineScope {
 
                 var classObject = inflater.inflate(R.layout.layout_class, null, true) as View
 
-                /*var id = classObject.findViewById(R.id.classId) as TextView
+                var id = classObject.findViewById(R.id.classId) as TextView
                 var title = classObject.findViewById(R.id.classTitle) as TextView
                 var percentage = classObject.findViewById(R.id.classPercentage) as TextView
 
                 id.text = tempObject.get("id").toString()
                 title.text = tempObject.get("name").toString()
-                percentage.text = tempObject.get("percentage").toString()*/
+                percentage.text = tempObject.get("percentage").toString()
 
                 Log.v("Uptune", classObject.toString())
 
                 classLinLay.addView(classObject)
-            }
+            }*/
         }
+    }
+
+    fun onClassClick(view : View)
+    {
+        changeScreen(ShowClassActivity::class.java)
     }
 
     override fun onDestroy() {

@@ -167,7 +167,7 @@ class HomeActivity : AppCompatActivity() , CoroutineScope {
     }
 
     fun onClassClick(view: View) {
-
+        changeScreen(ShowClassActivity::class.java)
     }
 
     fun onTrendTitleClick(view: View) {
