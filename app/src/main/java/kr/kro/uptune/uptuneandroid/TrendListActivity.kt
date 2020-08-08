@@ -49,6 +49,7 @@ class TrendListActivity : AppCompatActivity(), CoroutineScope {
             }
             if (jsonObject.get("status").toString() == "403") {
                 changeScreen(MainActivity::class.java)
+                return@launch
             } else if (jsonObject.get("status").toString() != "200") {
                 makeToast("알 수 없는 오류가 발생했습니다.", Toast.LENGTH_LONG)
                 return@launch
@@ -163,7 +164,7 @@ class TrendListActivity : AppCompatActivity(), CoroutineScope {
 
     fun onVideoUploadClick(view : View)
     {
-
+        changeScreen(VideoUploadActivity::class.java)
     }
 
     fun makeToast(content: String, type: Int) {

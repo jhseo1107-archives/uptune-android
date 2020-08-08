@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
             android:allowBackup="true"
@@ -11,7 +13,14 @@
             android:label="@string/app_name"
             android:roundIcon="@drawable/ic_logo"
             android:supportsRtl="true"
-            android:theme="@style/UptuneTheme">
+            android:theme="@style/UptuneTheme"
+            android:usesCleartextTraffic="true">
+        <activity android:name=".ShowClassActivity">
+        </activity>
+        <activity android:name=".VideoUploadActivity">
+        </activity>
+        <activity android:name=".ClassListActivity">
+        </activity>
         <activity android:name=".TrendViewActivity">
         </activity>
         <activity android:name=".TrendListActivity">

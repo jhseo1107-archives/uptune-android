@@ -34,4 +34,6 @@
     <string name="PopTrends">인기 트렌드 -></string>
     <string name="RecTrends">최근 트렌드 -></string>
     <string name="UploadVid">영상 업로드</string>
+    <string name="VideoTitle">영상 제목</string>
+    <string name="SelectVid">영상 선택</string>
 </resources>

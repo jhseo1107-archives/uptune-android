@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ShowClassActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/topBar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+    >
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp" app:srcCompat="@drawable/logolong"
+                android:id="@+id/topLongLogo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/topBar"
+    app:layout_constraintBottom_toBottomOf="parent"
+    >
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/classLinLay"
+        >
+            <ProgressBar
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/classListProgressBar"/>
+            <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                               xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                               android:layout_width="match_parent"
+                                                               android:layout_height="match_parent"
+                                                               android:visibility="gone"
+                                                               android:layout_marginBottom="50sp"
+                                                               android:layout_marginRight="10sp"
+                                                               android:layout_marginLeft="10sp"
+            >
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/longrectangle2"
+                        android:id="@+id/classBackground"
+                />
+
+                <TextView
+                        android:text="id"
+                        android:singleLine="true"
+                        android:textSize="30sp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:textColor="@color/thickgray"
+                        android:background="@color/transparent"
+                        android:id="@+id/classId"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.3"
+                        app:layout_constraintWidth_percent="0.7"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintVertical_bias="0.2"
+                />
+                <TextView
+                        android:text="강좌제목길이초과asdfasdfasdf"
+                        android:singleLine="true"
+                        android:textSize="30sp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:textColor="@color/thickgray"
+                        android:background="@color/transparent"
+                        android:id="@+id/classTitle"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.3"
+                        app:layout_constraintWidth_percent="0.7"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintVertical_bias="0.2"
+                />
+
+                <TextView
+                        android:text="진행률 30%"
+                        android:singleLine="true"
+                        android:textSize="20sp"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:textColor="@color/yellow"
+                        android:background="@color/transparent"
+                        android:id="@+id/classPercentage"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.3"
+                        app:layout_constraintWidth_percent="0.7"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintVertical_bias="0.8"
+                />
+                <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" app:srcCompat="@drawable/uptuneitself"
+                        android:id="@+id/classlogo"
+                        android:background="@color/transparent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent="0.8"
+                        app:layout_constraintWidth_percent="0.24"
+                        app:layout_constraintHorizontal_bias="0.05"
+                        app:layout_constraintVertical_bias="0.5"
+
+                />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include layout="@layout/layout_show_class_video"></include>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

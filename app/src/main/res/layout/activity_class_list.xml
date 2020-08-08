@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".TrendViewActivity">
+        tools:context=".ClassListActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -27,59 +27,26 @@
                 app:layout_constraintEnd_toEndOf="parent"
         />
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/topBar"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintBottom_toBottomOf="parent"
     >
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="match_parent"
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical"
+                      android:id="@+id/classLinLay"
         >
+
             <ProgressBar
                     style="?android:attr/progressBarStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/trendProgressBar"
-            />
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="25sp"
-                    android:paddingStart="15sp"
-                    android:paddingLeft="15sp"
-                    android:id="@+id/trendInfoLayout"
-                    android:visibility="gone"
-                    tools:visibility="visible"
-            >
-                <TextView
-                        android:text=""
-                        android:singleLine="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/trendTitle"
-                        android:textColor="@color/black"
-                        android:textSize="25sp"
-                />
-                <TextView
-                        android:text="글쓴이:  작성일:  좋아요 : "
-                        android:singleLine="true"
-                        android:layout_width="wrap_content"
-                        android:textSize="15sp"
-                        android:layout_height="wrap_content" android:id="@+id/trendInfo"
-                        android:layout_weight="1"
-                />
-            </LinearLayout>
-            <VideoView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/trendVideoView"
-                    android:visibility="visible"
-            />
+                    android:id="@+id/classListProgressBar"/>
 
         </LinearLayout>
     </ScrollView>

@@ -8,6 +8,7 @@ import android.text.Editable
 import android.util.Log
 import android.view.View
 import android.widget.*
+import kotlinx.android.synthetic.main.activity_trend_view.*
 import kotlinx.coroutines.*
 import org.json.simple.JSONArray
 import org.json.simple.JSONObject
@@ -25,6 +26,7 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + job
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         job = Job()
@@ -41,7 +43,7 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
 
         var mediaController = MediaController(this)
 
-                launch { // get
+        launch { // get
             var conn = url.openConnection() as HttpsURLConnection
 
             jsonObject = withContext(Dispatchers.IO) {
@@ -55,6 +57,7 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
             }
             if (jsonObject.get("status").toString() == "403") {
                 changeScreen(MainActivity::class.java)
+                return@launch
             } else if (jsonObject.get("status").toString() != "200") {
                 makeToast("알 수 없는 오류가 발생했습니다.", Toast.LENGTH_LONG)
                 return@launch
@@ -70,7 +73,7 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
 
             var commentArray = jsonObject.get("comment") as JSONArray
 
-            launch { // 영상 처리
+            launch { // Video Processing
                 var trendProgressBar = findViewById(R.id.trendProgressBar) as ProgressBar
                 var infoLinLay = findViewById(R.id.trendInfoLayout) as LinearLayout
                 var trendVideoView = findViewById(R.id.trendVideoView) as VideoView
@@ -84,20 +87,25 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
                 var videoUrl = "https://jhseo1107.kro.kr/uptune/Videos/"+trendId+"."+trendExtension
 
                 mediaController.setAnchorView(trendVideoView)
-
                 trendVideoView.setMediaController(mediaController)
-
                 trendVideoView.setVideoURI(Uri.parse(videoUrl))
+
+                trendVideoView.setOnPreparedListener{
+                    mp -> mp.isLooping = true
+                    Log.i("video", "Duration = "+trendVideoView.duration)
+                }
+
+                trendVideoView.start()
+                trendVideoView.requestFocus()
+
 
                 Log.v("videoview","parsed "+Uri.parse(videoUrl))
 
-                trendVideoView.start()
-
-                Log.v("videoview", "started")
-
                 trendProgressBar.visibility = View.GONE
+
                 infoLinLay.visibility = View.VISIBLE
                 trendVideoView.visibility = View.VISIBLE
+                Log.v("videoview", "started")
 
 
             }
@@ -112,6 +120,12 @@ class TrendViewActivity : AppCompatActivity(), CoroutineScope {
     override fun onDestroy() {
         super.onDestroy()
         job.cancel()
+        if(trendVideoView != null) trendVideoView.stopPlayback()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if(trendVideoView != null && trendVideoView.isPlaying) trendVideoView.pause()
     }
 
     fun makeToast(content: String, type: Int) {

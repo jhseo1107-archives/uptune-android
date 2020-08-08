@@ -35,4 +35,6 @@
     <string name="PopTrends">Popular Videos -></string>
     <string name="RecTrends">Recent Videos -></string>
     <string name="UploadVid">Upload Video</string>
+    <string name="VideoTitle">Video Title</string>
+    <string name="SelectVid">Select Video</string>
 </resources>

@@ -51,11 +51,15 @@ class HomeActivity : AppCompatActivity() , CoroutineScope {
                 parser.parse(br) as JSONObject
             }
             if (jsonObject.get("status").toString() == "403") {
+                Log.v("isNull", "got into 403")
                 changeScreen(MainActivity::class.java)
+                return@launch
             } else if (jsonObject.get("status").toString() != "200") {
                 makeToast("알 수 없는 오류가 발생했습니다.", Toast.LENGTH_LONG)
                 return@launch
             }
+
+            Log.v("isNull", jsonObject.toString())
 
             var classarray: JSONArray = jsonObject.get("class") as JSONArray
             var trendarray: JSONArray = jsonObject.get("trend") as JSONArray
@@ -159,7 +163,7 @@ class HomeActivity : AppCompatActivity() , CoroutineScope {
     }
 
     fun onClassTitleClick(view: View) {
-
+        changeScreen(ClassListActivity::class.java)
     }
 
     fun onClassClick(view: View) {
