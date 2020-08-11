@@ -833,7 +833,7 @@
     >
         <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="0dp" app:srcCompat="@drawable/adSample"
+                android:layout_height="0dp" app:srcCompat="@drawable/adsample"
                 android:id="@+id/adImage"
                 android:background="@color/adcolor"
                 app:layout_constraintTop_toTopOf="parent"
